@@ -1,0 +1,18 @@
+<h1>Recipes</h1>
+<h1>Searching for - <%= @search_term %></h1>
+<table border="1">
+	<tr>
+		<th>Image</th>
+		<th>Title</th>
+		<th>Social Rank</th>
+	</tr>
+	<% @recipes.each do |course| %>
+	<tr class=<%= cycle('even', 'odd') %>>
+		<td><%= image_tag(course["image_url"], size: "100")%></td> <!--image_tag is helper to get img-->
+		<td><%= course["title"] %></td>
+		<td><%= course["social_rank"] %></td>
+	</tr>
+	<% end %>
+</table>
+
+<p>Powered By Food2Fork.com</p>
